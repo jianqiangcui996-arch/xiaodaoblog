@@ -35,7 +35,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :date-:title.md
+new_post_name: ':title.md'
 default_layout: post
 titlecase: false
 external_link:
