@@ -1,0 +1,40 @@
+{
+  "cats": [
+    {
+      "name": "折腾",
+      "path": "折腾",
+      "posts": 30,
+      "pv": 0,
+      "hot": 300
+    },
+    {
+      "name": "AI",
+      "path": "AI",
+      "posts": 6,
+      "pv": 0,
+      "hot": 60
+    },
+    {
+      "name": "认知",
+      "path": "认知",
+      "posts": 5,
+      "pv": 0,
+      "hot": 50
+    },
+    {
+      "name": "网络",
+      "path": "网络",
+      "posts": 3,
+      "pv": 0,
+      "hot": 30
+    },
+    {
+      "name": "服务器",
+      "path": "服务器",
+      "posts": 1,
+      "pv": 0,
+      "hot": 10
+    }
+  ],
+  "generated": "2026-09-19"
+}

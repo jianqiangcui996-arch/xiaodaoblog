@@ -1,0 +1,113 @@
+# Hexo Configuration
+## 小道的技术笔记 —— hexo-rebuild（源：/home/kali/projects/hexo-rebuild）
+## 产物发布：npx hexo clean && npx hexo generate && cp -rf public/* /opt/1panel/www/blog-public/
+
+# Site
+title: 小道的技术笔记
+subtitle: 记录折腾、认知与闭环
+description: 记录家庭实验室、AI 折腾与认知方法论的实战笔记
+keywords:
+author: 小道
+language: zh-CN
+timezone: Asia/Shanghai
+i18n_code:
+  zh-CN: 中文
+  en: EN
+
+# URL
+## 静态站点：url 不写死域名（相对路径 + i18n 目录靠 permalink 兼容），
+## 但 feed/分享需要绝对 URL，用 root 空 + url 写 https 最省事。
+url: https://blog.dingdao.me
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: false
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :date-:title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+# Home page
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Metadata
+meta_generator: true
+
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'
+
+# Pagination
+per_page: 10
+pagination_dir: page
+
+# Include / Exclude
+include:
+exclude:
+ignore:
+
+# Extensions
+theme: next
+
+# feed (hexo-generator-feed)
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+# search (hexo-generator-searchdb)
+search:
+  path: search.json
+  field: 'all'
+  content: true
+  limit: 10000
+
+# Deployment
+deploy:
+  type: ''
+
+# 自定义：博客扩展（评论/点赞 API 端点，同源走 openresty blog server 反代）
+extend:
+  feedback_api: /api/feedback
+  comment_api: /api/comments

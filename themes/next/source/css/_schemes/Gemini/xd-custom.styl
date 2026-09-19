@@ -1,0 +1,323 @@
+// ============================================================
+// 小道博客定制样式（Gemini 方案）
+// ============================================================
+
+// ---- 1. 渐变头图（替代旧星空 banner）----
+// Gemini/Pisces 方案里站点品牌区位于 header 顶部（.site-brand-container），
+// 直接给它上渐变背景 + 大留白，得到「简洁纯色/渐变头图」效果
+.site-brand-container {
+  position: relative;
+  min-height: 200px;
+  padding: 0;
+  background:
+    radial-gradient(120% 160% at 12% -20%, rgba(255,196,120,.5), transparent 55%),
+    radial-gradient(120% 140% at 88% 0%, rgba(120,150,255,.45), transparent 60%),
+    linear-gradient(135deg, #16182e 0%, #2a2f52 42%, #4b4e86 75%, #7a6f9e 100%);
+  display: flex;
+  align-items: center;
+
+  body.dark & {
+    background:
+      radial-gradient(120% 160% at 12% -20%, rgba(80,140,255,.35), transparent 55%),
+      radial-gradient(120% 140% at 88% 0%, rgba(160,110,255,.3), transparent 60%),
+      linear-gradient(135deg, #0b0d16 0%, #14182c 50%, #1c2240 100%);
+  }
+
+  +tablet-mobile() {
+    min-height: 130px;
+  }
+
+  .site-meta {
+    padding: 0 20px;
+  }
+  .site-title {
+    color: #fff;
+    font-size: 1.9em;
+    text-shadow: 0 2px 12px rgba(0,0,0,.35);
+    border-bottom: 0;
+  }
+  .site-subtitle {
+    color: rgba(255,255,255,.82);
+    text-shadow: 0 1px 8px rgba(0,0,0,.3);
+    border-bottom: 0;
+  }
+  .brand { color: #fff; }
+  .brand:hover { color: #fff; }
+  .logo-line { display: none; }
+
+  // 让搜索/菜单按钮在渐变上可见
+  .site-nav-right .toggle {
+    color: #fff;
+    i { color: #fff; }
+    .toggle-line { background: #fff; }
+  }
+}
+
+// 顶部 3px headband 保留但用主题色
+.headband {
+  background: var(--theme-color);
+}
+
+// ---- 2. 首页分类热度横排条 ----
+.xd-cat-bar {
+  margin: 8px 0 18px;
+  .xd-cat-bar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--content-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+  }
+  .xd-cat-bar-label {
+    font-size: .85em;
+    color: var(--grey-dim);
+    margin-right: 4px;
+  }
+  .xd-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 11px;
+    border-radius: 16px;
+    font-size: .85em;
+    background: var(--menu-item-bg-color);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background .2s, transform .2s;
+    i { color: var(--theme-color); }
+    em { font-style: normal; font-size: .82em; color: var(--grey-dim); }
+    &:hover {
+      background: var(--theme-color);
+      color: #fff;
+      transform: translateY(-1px);
+      em { color: rgba(255,255,255,.8); }
+    }
+  }
+}
+
+// 侧边栏横排分类 widget
+#hot-categories-widget .hot-cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  .hot-cat {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    font-size: .85em;
+    border-radius: 14px;
+    background: var(--menu-item-bg-color);
+    text-decoration: none;
+    color: var(--text-color);
+    .hot-cat-meta {
+      font-size: .85em;
+      color: var(--grey-dim);
+      i { color: #ff7043; }
+    }
+    &:hover { background: var(--theme-color); color: #fff; .hot-cat-meta { color: rgba(255,255,255,.85); } }
+  }
+}
+
+// ---- 3. 文章引文高亮（首段 blockquote = TL;DR）----
+.post blockquote:first-of-type, .content blockquote:first-of-type {
+  position: relative;
+  margin: 1.1em 0 1.4em;
+  padding: 14px 16px 14px 20px;
+  border-left: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, color-tint(var(--theme-color), 8%), transparent 120%);
+  color: var(--black-deep);
+  font-size: 1.02em;
+  line-height: 1.75;
+  &::before {
+    content: '\25A0';
+    display: block;
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 4px;
+    background: var(--theme-color);
+  }
+  body.dark & { color: var(--text-color-dark); }
+  p { margin: 0; }
+}
+
+// ---- 4. 自定义工具条（朗读 / 点赞 / 推荐）----
+.xd-tools, .xd-share, .xd-feedback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 14px 0;
+  padding: 10px 0;
+  border-top: 1px dashed var(--border-color);
+  border-bottom: 1px dashed var(--border-color);
+}
+.xd-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background: var(--card-bg-color);
+  color: var(--text-color);
+  font-size: .85em;
+  cursor: pointer;
+  transition: all .2s;
+  i { font-size: 1em; }
+  &:hover { border-color: var(--theme-color); color: var(--theme-color); }
+  &.on {
+    background: var(--theme-color);
+    border-color: var(--theme-color);
+    color: #fff;
+    i { color: #fff; }
+  }
+  .xd-count {
+    font-style: normal;
+    font-size: .9em;
+    min-width: 14px;
+    text-align: center;
+    opacity: .75;
+  }
+}
+.xd-rate {
+  display: inline-flex;
+  align-items: center;
+  font-size: .8em;
+  color: var(--grey-dim);
+  input { width: 70px; accent-color: var(--theme-color); }
+}
+
+// ---- 5. 分享条 ----
+.xd-share-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.xd-s-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  font-size: .85em;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background: var(--card-bg-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all .2s;
+  &:hover { border-color: var(--theme-color); color: var(--theme-color); }
+}
+.xd-share-qrcode {
+  margin-top: 10px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  font-size: .8em;
+  color: #333;
+  text-align: center;
+  img { width: 180px; height: 180px; display: block; margin: 0 auto 6px; }
+}
+
+// ---- 6. 评论 ----
+.xd-comments {
+  margin: 20px 0;
+  .xd-c-title {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    b { color: var(--grey-dim); font-weight: normal; font-size: .85em; }
+  }
+  .xd-c-form {
+    input, textarea {
+      width: 100%;
+      margin: 6px 0;
+      padding: 8px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--card-bg-color);
+      color: var(--text-color);
+      font-size: .9em;
+      resize: vertical;
+      &:focus { outline: none; border-color: var(--theme-color); }
+    }
+    input[data-for] {
+      display: none;
+      border-left: 3px solid var(--theme-color);
+    }
+    .xd-c-form-foot {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .xd-c-hint { font-size: .78em; color: var(--grey-dim); }
+      .xd-c-submit {
+        margin-left: auto;
+        padding: 6px 16px;
+        border: none;
+        border-radius: 18px;
+        background: var(--theme-color);
+        color: #fff;
+        font-size: .85em;
+        cursor: pointer;
+        &:disabled { opacity: .6; cursor: default; }
+      }
+    }
+  }
+  .xd-c-list {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .xd-c-item {
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--card-bg-color);
+      &.reply {
+        margin-left: 22px;
+        border-left: 3px solid var(--theme-color);
+        background: color-tint(var(--content-bg-color), 3%);
+      }
+      .xd-c-meta {
+        display: flex;
+        gap: 8px;
+        align-items: baseline;
+        margin-bottom: 4px;
+        b { font-size: .9em; color: var(--text-color); }
+        span { font-size: .78em; color: var(--grey-dim); }
+      }
+      .xd-c-body { font-size: .9em; line-height: 1.6; word-break: break-word; }
+      .xd-c-reply {
+        margin-top: 6px;
+        font-size: .78em;
+        color: var(--theme-color);
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+    }
+    .xd-c-empty { color: var(--grey-dim); font-size: .85em; padding: 8px; }
+  }
+}
+
+// ---- 7. 语言切换（自建 fallback）----
+.xd-lang {
+  margin-top: 8px;
+  .xd-lang-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    font-size: .8em;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    &:hover { border-color: var(--theme-color); color: var(--theme-color); }
+  }
+}

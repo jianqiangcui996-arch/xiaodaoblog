@@ -1,0 +1,32 @@
+{
+  "zh": {
+    "home": "首页", "archives": "归档", "categories": "分类", "admin": "管理台",
+    "tags": "标签", "about": "关于", "search": "站内搜索",
+    "site_title": "小道的技术笔记", "site_sub": "记录折腾、认知与闭环",
+    "state_posts": "文章", "state_tags": "标签", "state_categories": "分类",
+    "widget_categories": "分类", "widget_tags": "标签", "widget_archives": "归档",
+    "widget_recent": "最新文章", "prev_post": "上一篇", "next_post": "后一篇",
+    "share_title": "分享本文", "copy_link": "复制链接", "copy_ok": "已复制",
+    "copy_fail": "复制失败", "weibo": "微博", "qq": "QQ", "wechat": "微信",
+    "like": "喜欢", "love": "推荐", "comments": "评论", "comment_list": "评论列表",
+    "name_ph": "昵称", "email_ph": "邮箱（选填）", "comment_ph": "说点什么…（支持简单 Markdown）",
+    "comment_send": "发表评论", "comment_sent": "评论已提交", "comment_err": "提交失败",
+    "read_aloud": "语音朗读", "read_aloud_stop": "停止朗读", "read_rate": "语速",
+    "theme": "主题", "rss": "RSS 订阅", "toc": "目录", "footer": "Powered by Hexo"
+  },
+  "en": {
+    "home": "Home", "archives": "Archives", "categories": "Categories", "admin": "Admin",
+    "tags": "Tags", "about": "About", "search": "Search",
+    "site_title": "Xiaodao's Tech Notes", "site_sub": "Tinkering, cognition & closed loops",
+    "state_posts": "Posts", "state_tags": "Tags", "state_categories": "Categories",
+    "widget_categories": "Categories", "widget_tags": "Tags", "widget_archives": "Archives",
+    "widget_recent": "Recent", "prev_post": "Prev", "next_post": "Next",
+    "share_title": "Share", "copy_link": "Copy link", "copy_ok": "Copied",
+    "copy_fail": "Copy failed", "weibo": "Weibo", "qq": "QQ", "wechat": "WeChat",
+    "like": "Like", "love": "Love", "comments": "Comments", "comment_list": "Comments",
+    "name_ph": "Name", "email_ph": "Email (opt)", "comment_ph": "Comment… (simple Markdown)",
+    "comment_send": "Post", "comment_sent": "Comment submitted", "comment_err": "Failed",
+    "read_aloud": "Read aloud", "read_aloud_stop": "Stop", "read_rate": "Speed",
+    "theme": "Theme", "rss": "RSS", "toc": "Contents", "footer": "Powered by Hexo"
+  }
+}
