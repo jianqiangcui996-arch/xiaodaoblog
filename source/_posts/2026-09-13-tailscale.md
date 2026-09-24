@@ -1,6 +1,6 @@
 ---
 title: 在家用宽带"封端口"时代，我如何用 Tailscale 搞定跨网络远程开发
-date: 2026-09-13 00:00:00 +08:00
+date: 2026-09-13
 categories: [网络]
 tags: [SSH, Tailscale, 远程开发]
 ---

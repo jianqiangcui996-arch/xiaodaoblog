@@ -1,6 +1,6 @@
 ---
 title: 在手机上跑大模型：HexaBench的6个Bug，全是正则和参数惹的祸
-date: 2026-09-26 00:00:00 +08:00
+date: 2026-09-26
 categories: [折腾]
 tags: [HexaBench, llama-cpp, 技术线, 本地大模型, 正则]
 ---

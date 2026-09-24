@@ -1,6 +1,6 @@
 ---
 title: 用CF搭建Serverless代理：0元搞定外网出口
-date: 2026-09-25 00:00:00 +08:00
+date: 2026-09-25
 categories: [折腾]
 tags: [Cloudflare, Serverless, 代理, 技术线, 架构]
 ---

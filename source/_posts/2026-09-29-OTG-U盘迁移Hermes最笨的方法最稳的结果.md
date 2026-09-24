@@ -1,6 +1,6 @@
 ---
 title: OTG U盘迁移Hermes：最笨的方法，最稳的结果
-date: 2026-09-29 00:00:00 +08:00
+date: 2026-09-29
 categories: [折腾]
 tags: [OTG, Termux, 备份, 技术线, 设备迁移]
 ---

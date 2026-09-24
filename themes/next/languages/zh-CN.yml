@@ -46,6 +46,8 @@ footer:
 widget:
   github: 在 GitHub 上关注我
   chat: 聊天
+  categories: 分类
+  tags: 标签
 counter:
   tag_cloud:
     zero: 暂无标签

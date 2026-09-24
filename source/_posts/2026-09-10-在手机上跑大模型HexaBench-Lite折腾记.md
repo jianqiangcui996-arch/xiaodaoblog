@@ -1,6 +1,6 @@
 ---
 title: 在手机上跑大模型，HexaBench Lite折腾记
-date: 2026-09-10 00:00:00 +08:00
+date: 2026-09-10
 categories: [折腾]
 tags: [Android, Cloudflare, HexaBench, llama-cpp, 本地LLM]
 ---

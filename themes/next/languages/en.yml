@@ -51,6 +51,8 @@ footer:
 widget:
   github: Follow me on GitHub
   chat: Chat
+  categories: Categories
+  tags: Tags
 
 counter:
   tag_cloud:

@@ -1,6 +1,6 @@
 ---
 title: 一台Android手机，就是我的AI服务器
-date: 2026-07-14 00:00:00 +08:00
+date: 2026-07-14
 categories: [折腾]
 tags: [AI, Android, Hermes, OpenClaw, Termux, 手机服务器]
 ---

@@ -22,6 +22,20 @@ hexo.extend.helper.register('next_extend', function() {
   return JSON.stringify(this.config.extend || {}).replace(/</g, '\\u003c');
 });
 
+// 读取 source/_data/*.json（hexo 把 _data 目录解析为 data filter，
+// 但模板里没有同名 helper，这里补一个，参数为文件基名）
+hexo.extend.helper.register('xd_data', function(name) {
+  const fs = require('fs');
+  const path = require('path');
+  const p = path.join(hexo.source_dir, '_data', name + '.json');
+  if (!fs.existsSync(p)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(p, 'utf-8'));
+  } catch (e) {
+    return null;
+  }
+});
+
 hexo.extend.helper.register('next_js', function(file, {
   pjax = false,
   module = false,

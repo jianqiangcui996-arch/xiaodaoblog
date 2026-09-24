@@ -1,6 +1,6 @@
 ---
 title: 家用虚拟机外网访问收口：HA、博客与 Cloudflare Tunnel 一次打通
-date: 2026-09-17 00:00:00 +08:00
+date: 2026-09-17
 categories: [网络]
 tags: [Cloudflare, Hexo, Home-Assistant, Tunnels]
 ---

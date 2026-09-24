@@ -1,6 +1,6 @@
 ---
 title: 一个 API Key 调用 19 个模型：我把家用 Hyper-V 虚拟机改成了私人 AI 网关
-date: 2026-09-17 00:00:00 +08:00
+date: 2026-09-17
 categories: [折腾]
 tags: []
 ---

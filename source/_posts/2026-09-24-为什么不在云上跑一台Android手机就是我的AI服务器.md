@@ -1,6 +1,6 @@
 ---
 title: 为什么不在云上跑：一台Android手机就是我的AI服务器
-date: 2026-09-24 00:00:00 +08:00
+date: 2026-09-24
 categories: [折腾]
 tags: [Termux, 个人成长, 本地vs云, 架构决策]
 ---

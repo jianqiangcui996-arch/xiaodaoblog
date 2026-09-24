@@ -8,10 +8,10 @@
 </div>
 
 {# 横排分类 + 热度（数据：source/_data/popularity.json，gen_popularity.py 生成）#}
-{%- set cats = data('popularity') -%}
+{%- set cats = xd_data('popularity') -%}
 {%- if cats and cats.cats %}
 <div class="widget hot-categories animated" id="hot-categories-widget">
-  <h3 class="widget-title">{{ __('widget.categories') }}</h3>
+  <h3 class="widget-title">{{ __('widget.categories') }} · Top {{ cats.cats.length }}</h3>
   <div class="widget hot-cats">
     {%- for cat in cats.cats -%}
     <a class="hot-cat" href="{{ url_for('/categories/' + cat.path + '/') }}">
@@ -36,31 +36,23 @@
       </div>
     {%- endif %}
 
+    {# 分类/标签列表页直接链接 config.category_dir / tag_dir（不要求主题生成索引页），
+       保证"45/7/84"三个数字都可以点进去 #}
     {%- if site.categories.length > 0 %}
-      {%- set categoriesPageQuery = site.pages.find({type: 'categories'}, {lean: true}) %}
-      {%- set hasCategoriesPage = categoriesPageQuery.length > 0 %}
       <div class="site-state-item site-state-categories">
-        {%- set category_dir = theme.menu.categories.split('||')[0] | trim if theme.menu.categories else config.category_dir + '/' %}
-        {%- if hasCategoriesPage %}
-          <a href="{{ url_for(category_dir) }}">
-        {%- endif %}
-        <span class="site-state-item-count">{{ site.categories.length }}</span>
-        <span class="site-state-item-name">{{ __('state.categories') }}</span>
-        {%- if hasCategoriesPage %}</a>{% endif %}
+        <a href="{{ url_for(config.category_dir + '/') }}">
+          <span class="site-state-item-count">{{ site.categories.length }}</span>
+          <span class="site-state-item-name">{{ __('state.categories') }}</span>
+        </a>
       </div>
     {%- endif %}
 
     {%- if site.tags.length > 0 %}
-      {%- set tagsPageQuery = site.pages.find({type: 'tags'}, {lean: true}) %}
-      {%- set hasTagsPage = tagsPageQuery.length > 0 %}
       <div class="site-state-item site-state-tags">
-        {%- set tag_dir = theme.menu.tags.split('||')[0] | trim if theme.menu.tags else config.tag_dir + '/' %}
-        {%- if hasTagsPage %}
-          <a href="{{ url_for(tag_dir) }}">
-        {%- endif %}
-        <span class="site-state-item-count">{{ site.tags.length }}</span>
-        <span class="site-state-item-name">{{ __('state.tags') }}</span>
-        {%- if hasTagsPage %}</a>{% endif %}
+        <a href="{{ url_for(config.tag_dir + '/') }}">
+          <span class="site-state-item-count">{{ site.tags.length }}</span>
+          <span class="site-state-item-name">{{ __('state.tags') }}</span>
+        </a>
       </div>
     {%- endif %}
   </nav>
