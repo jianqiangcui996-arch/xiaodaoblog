@@ -1,2 +1,28 @@
 {# 自定义扩展：文章内 朗读/点赞/评论/分享/i18n，由 xd-extend.js 驱动 #}
 <script src="{{ url_for(theme.js) }}/xd-extend.js" defer></script>
+{% if is_post() %}
+<script>
+(function(){
+  var CFG={repo:'jianqiangcui996-arch/xiaodaoblog',repoId:'R_kgDOUo3Phg',cat:'General',catId:'DIC_kwDOUo3Phs4DGSO2'};
+  function mount(){
+    var entry=document.querySelector('[itemprop="articleBody"]')||document.querySelector('.post-body');
+    if(!entry){setTimeout(mount,200);return;}
+    if(document.querySelector('.giscus'))return;
+    var host=entry.parentNode;
+    var wrap=document.createElement('section');wrap.className='post-comments xd-giscus';wrap.style.marginTop='2rem';
+    var t=document.createElement('h4');t.innerHTML='<i class="fa fa-comments-o"></i> 评论';
+    var box=document.createElement('div');box.className='giscus';
+    wrap.appendChild(t);wrap.appendChild(box);host.appendChild(wrap);
+    var s=document.createElement('script');s.src='https://giscus.app/client.js';
+    s.setAttribute('data-repo',CFG.repo);s.setAttribute('data-repo-id',CFG.repoId);
+    s.setAttribute('data-category',CFG.cat);s.setAttribute('data-category-id',CFG.catId);
+    s.setAttribute('data-mapping','pathname');s.setAttribute('data-strict','0');
+    s.setAttribute('data-reactions-enabled','1');s.setAttribute('data-emit-metadata','0');
+    s.setAttribute('data-input-position','bottom');s.setAttribute('data-theme','preferred_color_scheme');
+    s.setAttribute('data-lang','zh-CN');s.setAttribute('crossorigin','anonymous');s.async=true;
+    wrap.appendChild(s);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();
+})();
+</script>
+{% endif %}

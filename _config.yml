@@ -110,4 +110,4 @@ deploy:
 # 自定义：博客扩展（评论/点赞 API 端点，同源走 openresty blog server 反代）
 extend:
   feedback_api: /api/feedback
-  comment_api: /api/comments
+#   comment_api: /api/comments
